@@ -1,3 +1,4 @@
+import './home.css';
 
 import Button from '../../components/button/button';
 
