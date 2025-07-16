@@ -1,9 +1,23 @@
-import styles from './button.module.css';
+import styles from "./Button.module.css";
 
-const Button = ({ text }) => {
-  return <button className={styles.btn}>{text}</button>;
-};
+function Button({
+  text,
+  onClick,
+  isLoading = false,
+  disabled = false,
+  type = "button",
+}) {
+  return (
+    <button
+      className={styles.btn}
+      onClick={onClick}
+      disabled={disabled || isLoading}
+      type={type}
+    >
+      {text}
+      {isLoading && <span className={styles.spinner} />}
+    </button>
+  );
+}
 
 export default Button;
-
-
