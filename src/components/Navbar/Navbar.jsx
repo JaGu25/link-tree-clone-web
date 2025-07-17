@@ -14,7 +14,7 @@ const Navbar = () => {
       </nav>
       <div className={styles.actions}>
         <button className={styles.login}>Iniciar sesión</button>
-        <Button text="Registrarse" />
+        <Button text="Registrarse"/>
       </div>
     </header>
   );

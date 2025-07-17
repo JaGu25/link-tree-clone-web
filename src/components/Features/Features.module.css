@@ -5,7 +5,7 @@
 }
 
 .features h2 {
-  font-size: 2.5rem;
+  font-size: var(--font-h2);
   margin-bottom: 1rem; 
 }
 
@@ -22,7 +22,7 @@
 }
 
 .featuresAlt h2 {
-  font-size: 2.5rem;
+  font-size: var(--font-h2);
   margin-bottom: 40px;
   color: #222;
 }

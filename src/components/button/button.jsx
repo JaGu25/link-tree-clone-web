@@ -2,13 +2,14 @@ import React from "react";
 import styles from "./Button.module.css";
 
 const Button = ({ text, variant = "primary", ...props }) => {
-  const buttonClass = `${styles.btn} ${styles[variant]}`;
+  const classNames = `${styles.btn} ${styles[variant]}`;
 
   return (
-    <button className={buttonClass} {...props}>
+    <button className={classNames} {...props}>
       {text}
     </button>
   );
 };
 
 export default Button;
+    
