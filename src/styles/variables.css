@@ -1,0 +1,38 @@
+:root {
+  --primary-color: #4f46e5;
+  --primary-color-dark: #4338ca;
+  --text-color: #374151;
+  --background-hover: #eef2ff;
+  --navbar-bg: #ffffff;
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --secondary-color: #9333ea;
+}
+
+
+:root {
+  --font-xs: 0.75rem;   
+  --font-sm: 0.875rem;
+  --font-base: 1rem;    
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem; 
+  --font-2xl: 1.5rem;  
+  --font-3xl: 1.875rem;
+  --font-4xl: 2.25rem; 
+  --font-5xl: 3rem;    
+  --font-6xl: 5rem;
+}
+
+
+
+:root {
+  --card-bg: #ffffff;
+  --card-border: #f0f0f0;
+  --text-dark: #222;
+  --text-medium: #555;
+  --icon-color: #4c8bf5;
+
+  --font-sm: 0.9rem;
+  --font-base: 1rem;
+  --font-lg: 1.1rem;
+  --font-xl: 2.5rem;
+}

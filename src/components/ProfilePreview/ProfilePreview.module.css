@@ -21,9 +21,6 @@
   -webkit-backdrop-filter: blur(10px);
 }
 
-
-
-
 .avatar {
   width: 100px;
   height: 100px;
@@ -73,10 +70,10 @@
   background: rgba(255, 255, 255, 0.25);
 }
 
-
 .link:hover {
   background: rgba(255, 255, 255, 0.25);
 }
+
 .icon {
   margin-right: 8px;
   font-size: 18px;

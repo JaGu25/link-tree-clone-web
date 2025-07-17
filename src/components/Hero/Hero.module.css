@@ -1,21 +1,21 @@
 .hero {
-  padding: 150px 20px;
+  padding: 9.375rem 1.25rem;
   text-align: center;
   color: white;
-  background: linear-gradient(135deg, #4F46E5, #9333EA); 
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 .hero h1 {
-  font-size: 4.5rem;
+  font-size: var(--font-6xl); 
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; 
   line-height: 1.2;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 600px;
+  font-size: var(--font-lg);
+  margin-bottom: 1.875rem; 
+  max-width: 37.5rem; 
   margin-left: auto;
   margin-right: auto;
 }
@@ -23,7 +23,7 @@
 .actions {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0.9375rem;
   align-items: center;
 }
 
@@ -31,5 +31,5 @@
   color: white;
   text-decoration: underline;
   font-weight: 500;
+  font-size: var(--font-base); 
 }
-

@@ -3,7 +3,6 @@ import styles from "./Features.module.css";
 import FeatureCard from "../FeatureCard/FeatureCard";
 import { FaLink, FaPaintBrush, FaChartLine } from "react-icons/fa";
 
-
 const Features = () => {
     return (
         <>
