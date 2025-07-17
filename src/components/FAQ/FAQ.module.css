@@ -1,0 +1,30 @@
+.faqSection {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.faqSection h1 {
+  font-size: var(--font-h2); 
+  margin-bottom: 50px; 
+}
+
+.faqItem {
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faqItem h3 {
+  font-size: var(--font-lg); 
+  color: var(--text-dark);   
+  margin-bottom: 8px;
+}
+
+.faqItem p {
+  font-size: var(--font-base); 
+  color: var(--text-medium);  
+  line-height: 1.5;
+}

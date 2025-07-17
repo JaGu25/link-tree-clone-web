@@ -8,11 +8,12 @@
   --color-text: #1f2937;        
   --color-muted: #6b7280;        
   --color-border: #e5e7eb;      
-  --color-error: #ef4444;      
+  --color-error: #ef4444;     
+  --font-main: 'Inter', sans-serif; 
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-main);
   background-color: var(--color-background);
   color: var(--color-text);
 }

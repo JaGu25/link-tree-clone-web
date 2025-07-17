@@ -1,39 +1,40 @@
 .btn {
-  padding: 10px 20px;
-  background-color: var(--color-primary);
-  color: var(--color-background);
+  padding: 10px 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: var(--font-base);
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 999px;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.15s ease;
+  transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
+.primary {
+  background-color: var(--primary-color);
+  color: var(--navbar-bg);
+}
 
-.btn:hover:not(:disabled) {
-  background-color: var(--color-primary-dark);
+.primary:hover:not(:disabled) {
+  background-color: var(--primary-color-dark);
+  transform: scale(1.03);
+}
+
+.white {
+  background-color: var(--navbar-bg);
+  color: var(--primary-color);
+  border: 3px solid var(--navbar-bg);
+  font-weight: bold;
+}
+
+.white:hover:not(:disabled) {
+  background-color: #f3f4f6;
+  color: var(--primary-color);
+  border-color: #f3f4f6;
   transform: scale(1.03);
 }
 
 .btn:disabled {
   background-color: var(--color-muted);
   cursor: not-allowed;
-}
-
-.spinner {
-  width: 14px;
-  height: 14px;
-  border: 2px solid var(--color-background);
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: spin 0.6s linear infinite;
-  margin-left: 8px;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }

@@ -1,0 +1,59 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: var(--navbar-bg);
+  box-shadow: var(--shadow-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav a {
+  margin: 0 15px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--primary-color);
+}
+
+.actions .login {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.login:hover {
+  background-color: var(--background-hover);
+  transform: scale(1.03);
+}
+
+.register {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.register:hover {
+  background-color: var(--primary-color-dark);
+}

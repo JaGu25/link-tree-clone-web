@@ -1,0 +1,35 @@
+.hero {
+  padding: 9.375rem 1.25rem;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.hero h1 {
+  font-size: var(--font-6xl); 
+  font-weight: 700;
+  margin-bottom: 1.25rem; 
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: var(--font-lg);
+  margin-bottom: 1.875rem; 
+  max-width: 37.5rem; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  align-items: center;
+}
+
+.actions .link {
+  color: white;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: var(--font-base); 
+}
