@@ -1,4 +1,5 @@
-import Button from "../../components/Button/Button";
+import React from "react";
+import Button from "../../components/button/button";
 
 function Test() {
   return (
@@ -6,8 +7,8 @@ function Test() {
       <h1>Bienvenido a LinkTree Clone Test</h1>
       <div style={{ display: "flex", gap: "10px", margin: "20px" }}>
         <Button text="Haz clic aquí" />
-        <Button text="Haz clic aquí" disabled />
-        <Button text="Haz clic aquí" isLoading />
+        <Button text="Desactivado" disabled />
+        <Button text="Cargando" isLoading />
       </div>
     </div>
   );

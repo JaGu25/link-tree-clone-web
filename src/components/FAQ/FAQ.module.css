@@ -1,0 +1,30 @@
+.faqSection {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.faqSection h1 {
+  font-size: 2.5rem;
+  margin-bottom: 50px; 
+}
+
+.faqItem {
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faqItem h3 {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.faqItem p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}

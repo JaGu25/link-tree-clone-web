@@ -1,0 +1,30 @@
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 16px 20px; 
+  max-width: 280px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px; 
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #4c8bf5;
+  margin-bottom: 12px;
+}
+

@@ -1,23 +1,14 @@
-import styles from "./Button.module.css";
+import React from "react";
+import styles from "./button.module.css";
 
-function Button({
-  text,
-  onClick,
-  isLoading = false,
-  disabled = false,
-  type = "button",
-}) {
+const Button = ({ text, variant = "primary", ...props }) => {
+  const buttonClass = `${styles.btn} ${styles[variant]}`;
+
   return (
-    <button
-      className={styles.btn}
-      onClick={onClick}
-      disabled={disabled || isLoading}
-      type={type}
-    >
+    <button className={buttonClass} {...props}>
       {text}
-      {isLoading && <span className={styles.spinner} />}
     </button>
   );
-}
+};
 
 export default Button;
