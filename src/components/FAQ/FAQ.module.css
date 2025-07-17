@@ -5,7 +5,7 @@
 }
 
 .faqSection h1 {
-  font-size: 2.5rem;
+  font-size: var(--font-h2); 
   margin-bottom: 50px; 
 }
 
@@ -18,13 +18,13 @@
 }
 
 .faqItem h3 {
-  font-size: 1.2rem;
-  color: #222;
+  font-size: var(--font-lg); 
+  color: var(--text-dark);   
   margin-bottom: 8px;
 }
 
 .faqItem p {
-  font-size: 1rem;
-  color: #555;
+  font-size: var(--font-base); 
+  color: var(--text-medium);  
   line-height: 1.5;
 }
