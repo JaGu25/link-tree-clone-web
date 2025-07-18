@@ -57,21 +57,6 @@
   border-color: var(--primary-color);
 }
 
-.loginForm button {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 0.75rem;
-  font-size: var(--font-base);
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.loginForm button:hover {
-  background-color: var(--primary-color-dark);
-}
-
 .registerText {
   text-align: center;
   font-size: var(--font-sm);
