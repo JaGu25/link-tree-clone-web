@@ -1,0 +1,70 @@
+.loginPage {
+  height: 100vh;
+  background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.loginContainer {
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 25rem; 
+  box-shadow: var(--shadow-light);
+  text-align: center;
+}
+
+.loginTitle {
+  font-size: var(--font-2xl);
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.loginSubtitle {
+  font-size: var(--font-sm);
+  color: var(--text-medium);
+  margin-bottom: 2rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.loginForm label {
+  font-size: var(--font-xs);
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.loginForm input {
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  border: 0.0625rem solid #d1d5db; 
+  border-radius: 0.5rem;
+  font-size: var(--font-base);
+  background-color: #f9fafb;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.loginForm input:focus {
+  border-color: var(--primary-color);
+}
+
+.registerText {
+  text-align: center;
+  font-size: var(--font-sm);
+  color: var(--text-medium);
+  margin-top: 1rem;
+}
+
+.registerText a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
