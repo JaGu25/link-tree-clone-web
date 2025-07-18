@@ -20,6 +20,7 @@ const Login = () => {
             <input
             type="password"
             id="password"
+            placeholder='Crea una contraseña'
             required
             />
             <Button text="Iniciar sesión" type="submit" variant="primary" />
