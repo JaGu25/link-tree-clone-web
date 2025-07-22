@@ -1,0 +1,123 @@
+body {
+  font-family: var(--font-main);
+  background-color: var(--navbar-bg);
+  color: var(--text-color);
+}
+
+.wrapper {
+  padding: 2rem;
+  background-color: var(--card-bg);
+  min-height: 100vh;
+  font-family: var(--font-main);
+}
+
+.titleContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 0;
+}
+
+.pageTitle {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: left;
+  font-family: var(--font-main);
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-light);
+}
+
+.title {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form label {
+  font-weight: 600;
+  color: var(--text-medium);
+  margin-bottom: 0.2rem;
+  font-family: var(--font-main);
+}
+
+.form input[type="text"],
+.form input[type="url"],
+.form input[type="color"],
+.form textarea {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  font-size: var(--font-base);
+  background-color: var(--card-bg);
+  transition: border 0.2s, background-color 0.2s;
+  font-family: var(--font-main);
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+.form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-family: var(--font-main);
+  color: var(--text-color);
+}
+
+.publicLink {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.publicLink a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-family: var(--font-main);
+}
+
+.publicLink a:hover {
+  text-decoration: underline;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.actionsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}

@@ -4,6 +4,7 @@ import Home from "../pages/home/home";
 import LandingPage from "../pages/landing/landingpage";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import LinktreeConfig from "../components/LinktreeConfig/LinktreeConfig";
 
 function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ function AppRoutes() {
       <Route path="/home" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/config" element={<LinktreeConfig/>} />
     </Routes>
   );
 }
