@@ -93,3 +93,12 @@
 .footerIcon {
   color: rgba(255, 255, 255, 0.7);
 }
+
+.publicWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   background: linear-gradient(to right, #4f46e5, #9333ea);
+  padding: 2rem;
+}
