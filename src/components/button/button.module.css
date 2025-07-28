@@ -10,6 +10,8 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Estilo general */
 .primary {
   background-color: var(--primary-color);
   color: var(--navbar-bg);
@@ -37,4 +39,22 @@
 .btn:disabled {
   background-color: var(--color-muted);
   cursor: not-allowed;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .btn {
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .btn {
+    padding: 7px 16px;
+    font-size: 0.85rem;
+  }
+
+  .btn:disabled {
+    opacity: 0.7;
+  }
 }

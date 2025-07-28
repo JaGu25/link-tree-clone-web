@@ -7,6 +7,7 @@
   justify-content: space-between;
   box-shadow: var(--shadow-light);
   font-family: var(--font-main);
+  flex-wrap: wrap; 
 }
 
 .logo {
@@ -19,6 +20,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  margin-top: 0; 
 }
 
 .icon {
@@ -36,4 +38,49 @@
   transition: color 0.2s ease-in-out;
   margin-left: 0.5rem;
   font-family: var(--font-main);
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+
+  .logout {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .rightSection {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .icon {
+    font-size: 1.1rem;
+  }
+
+  .logout {
+    font-size: 0.85rem;
+  }
 }

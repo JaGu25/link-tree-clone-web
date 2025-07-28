@@ -12,7 +12,7 @@
   padding: 2.5rem;
   border-radius: 1rem;
   width: 100%;
-  max-width: 25rem; 
+  max-width: 25rem;
   box-shadow: var(--shadow-light);
   text-align: center;
 }
@@ -45,7 +45,7 @@
 .loginForm input {
   padding: 0.75rem;
   margin-bottom: 1.25rem;
-  border: 0.0625rem solid #d1d5db; 
+  border: 0.0625rem solid #d1d5db;
   border-radius: 0.5rem;
   font-size: var(--font-base);
   background-color: #f9fafb;
@@ -67,4 +67,60 @@
 .registerText a {
   color: var(--primary-color);
   text-decoration: none;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .loginContainer {
+    padding: 2rem;
+    max-width: 22rem;
+  }
+
+  .loginTitle {
+    font-size: var(--font-xl);
+  }
+
+  .loginSubtitle {
+    font-size: var(--font-sm);
+  }
+
+  .loginForm input {
+    font-size: var(--font-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .loginPage {
+    padding-inline: 16px;
+  }
+
+  .loginContainer {
+    padding: 24px 16px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .loginTitle {
+    font-size: 20px;
+  }
+
+  .loginSubtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .loginForm input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .loginForm button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .registerText a {
+    font-size: 13px;
+  }
 }

@@ -1,24 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .container {
   width: 100%;
-  min-height: 70vh; 
-  padding: 60px 20px; 
+  min-height: 70vh;
+  padding: 60px 20px;
   background: linear-gradient(to right, #4f46e5, #9333ea);
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .preview {
-  background: rgba(255, 255, 255, 0.15); 
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   padding: 32px 24px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   text-align: center;
-  max-width: 320px;     
-  min-height: 420px;     
+  max-width: 320px;
+  min-height: 420px;
   margin: 0 auto;
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+  width: 100%;
 }
 
 .avatar {
@@ -41,6 +56,9 @@
   font-size: 14px;
   color: #e5e7eb;
   margin-bottom: 20px;
+  line-height: 1.4;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .links {
@@ -63,11 +81,8 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2); 
-}
-
-.link:hover {
-  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
 }
 
 .link:hover {
@@ -88,6 +103,7 @@
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 400;
+  flex-wrap: wrap;
 }
 
 .footerIcon {
@@ -99,6 +115,65 @@
   display: flex;
   justify-content: center;
   align-items: center;
-   background: linear-gradient(to right, #4f46e5, #9333ea);
-  padding: 2rem;
+  background: linear-gradient(to right, #4f46e5, #9333ea);
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1023px) {
+  .container {
+    padding: 40px 16px;
+  }
+
+  .preview {
+    padding: 28px 20px;
+    max-width: 280px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .bio {
+    font-size: 13px;
+  }
+
+  .link {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .preview {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 16px;
+    border-radius: 0;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .bio {
+    font-size: 13px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .link {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+    gap: 4px;
+  }
 }
