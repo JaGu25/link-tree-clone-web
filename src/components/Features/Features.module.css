@@ -1,39 +1,56 @@
-.features {
-  padding: 60px 20px;
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.features h2 {
-  font-size: var(--font-h2);
-  margin-bottom: 1rem; 
-}
-
+.features,
 .featuresAlt {
-  padding: 60px 20px;
-  background-color: #f2f5f9; 
+  padding: var(--spacing-lg) var(--spacing-md);
+  background-color: var(--card-bg);
   text-align: center;
 }
 
-.featuresAlt {
-  padding: 60px 20px;
-  background-color: #ffffff;
-  text-align: center;
-}
-
+.features h2,
 .featuresAlt h2 {
   font-size: var(--font-h2);
-  margin-bottom: 40px;
-  color: #222;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-dark);
 }
 
+.features .grid,
 .grid {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 3.5rem;
 }
 
-.features .grid {
-  margin-top: 3.5rem; 
+@media (max-width: 1023px) and (min-width: 768px) {
+  .features,
+  .featuresAlt {
+    padding: 50px 16px;
+  }
+
+  .features h2,
+  .featuresAlt h2 {
+    font-size: var(--font-2xl);
+  }
+
+  .grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .features,
+  .featuresAlt {
+    padding: 40px 12px;
+  }
+
+  .features h2,
+  .featuresAlt h2 {
+    font-size: var(--font-xl);
+  }
+
+  .grid {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
 }

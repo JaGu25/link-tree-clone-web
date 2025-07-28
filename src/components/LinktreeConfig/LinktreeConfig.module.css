@@ -5,10 +5,9 @@ body {
 }
 
 .wrapper {
-  padding: 2rem;
+  padding: var(--spacing-lg);
   background-color: var(--background-gray);
   min-height: 100vh;
-  font-family: var(--font-main);
 }
 
 .titleContainer {
@@ -22,9 +21,8 @@ body {
   font-size: var(--font-xl);
   font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-lg);
   text-align: left;
-  font-family: var(--font-main);
 }
 
 .container {
@@ -40,7 +38,7 @@ body {
 .title {
   font-size: var(--font-2xl);
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-lg);
   color: var(--text-color);
   text-align: left;
 }
@@ -55,7 +53,7 @@ body {
   font-weight: 600;
   color: var(--text-medium);
   margin-bottom: 0.2rem;
-  font-family: var(--font-main);
+  font-size: var(--font-base);
 }
 
 .form input[type="text"],
@@ -68,7 +66,6 @@ body {
   font-size: var(--font-base);
   background-color: var(--card-bg);
   transition: border 0.2s, background-color 0.2s;
-  font-family: var(--font-main);
 }
 
 .form input:focus,
@@ -87,8 +84,8 @@ body {
   align-items: center;
   gap: 0.5rem;
   margin-top: 1rem;
-  font-family: var(--font-main);
   color: var(--text-color);
+  font-size: var(--font-sm);
 }
 
 .publicLink {
@@ -100,7 +97,7 @@ body {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 700;
-  font-family: var(--font-main);
+  font-size: var(--font-base);
 }
 
 .publicLink a:hover {
@@ -120,4 +117,67 @@ body {
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .pageTitle {
+    font-size: var(--font-lg);
+  }
+
+  .title {
+    font-size: var(--font-xl);
+  }
+
+  .form input,
+  .form textarea {
+    font-size: var(--font-base);
+  }
+
+  .buttonContainer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .pageTitle {
+    font-size: var(--font-lg);
+    text-align: center;
+  }
+
+  .title {
+    font-size: var(--font-lg);
+    text-align: center;
+  }
+
+  .form input,
+  .form textarea {
+    font-size: var(--font-sm);
+  }
+
+  .checkbox {
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: var(--font-sm);
+  }
+
+  .buttonContainer {
+    justify-content: center;
+  }
+
+  .actionsRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

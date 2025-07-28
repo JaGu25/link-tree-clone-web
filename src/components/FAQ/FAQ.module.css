@@ -1,12 +1,13 @@
 .faqSection {
   padding: 60px 20px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: var(--card-bg);
 }
 
 .faqSection h1 {
-  font-size: var(--font-h2); 
-  margin-bottom: 50px; 
+  font-size: var(--font-h2);
+  margin-bottom: 50px;
+  font-family: var(--font-main);
 }
 
 .faqItem {
@@ -18,13 +19,58 @@
 }
 
 .faqItem h3 {
-  font-size: var(--font-lg); 
-  color: var(--text-dark);   
+  font-size: var(--font-lg);
+  color: var(--text-dark);
   margin-bottom: 8px;
+  font-family: var(--font-main);
 }
 
 .faqItem p {
-  font-size: var(--font-base); 
-  color: var(--text-medium);  
+  font-size: var(--font-base);
+  color: var(--text-medium);
   line-height: 1.5;
+  font-family: var(--font-main);
 }
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .faqSection {
+    padding: 50px 16px;
+  }
+
+  .faqSection h1 {
+    font-size: var(--font-2xl);
+  }
+
+  .faqItem h3 {
+    font-size: var(--font-base);
+  }
+
+  .faqItem p {
+    font-size: var(--font-base);
+  }
+}
+
+@media (max-width: 767px) {
+  .faqSection {
+    padding: 40px 14px;
+  }
+
+  .faqSection h1 {
+    font-size: var(--font-xl);
+    margin-bottom: 30px;
+  }
+
+  .faqItem {
+    margin-bottom: 16px;
+  }
+
+  .faqItem h3 {
+    font-size: var(--font-sm);
+  }
+
+  .faqItem p {
+    font-size: var(--font-sm);
+  }
+}
+
+

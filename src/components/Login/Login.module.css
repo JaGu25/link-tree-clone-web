@@ -4,15 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-main), sans-serif;
 }
 
 .loginContainer {
   background-color: var(--card-bg);
-  padding: 2.5rem;
+  padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
   border-radius: 1rem;
   width: 100%;
-  max-width: 25rem; 
+  max-width: 25rem;
   box-shadow: var(--shadow-light);
   text-align: center;
 }
@@ -21,13 +21,13 @@
   font-size: var(--font-2xl);
   font-weight: bold;
   color: var(--primary-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-xs);
 }
 
 .loginSubtitle {
   font-size: var(--font-sm);
   color: var(--text-medium);
-  margin-bottom: 2rem;
+  margin-bottom: calc(var(--spacing-lg) * 1.3);
 }
 
 .loginForm {
@@ -43,9 +43,9 @@
 }
 
 .loginForm input {
-  padding: 0.75rem;
-  margin-bottom: 1.25rem;
-  border: 0.0625rem solid #d1d5db; 
+  padding: var(--spacing-sm);
+  margin-bottom: calc(var(--spacing-lg) * 1.25);
+  border: 1px solid #d1d5db;
   border-radius: 0.5rem;
   font-size: var(--font-base);
   background-color: #f9fafb;
@@ -61,10 +61,66 @@
   text-align: center;
   font-size: var(--font-sm);
   color: var(--text-medium);
-  margin-top: 1rem;
+  margin-top: var(--spacing-md);
 }
 
 .registerText a {
   color: var(--primary-color);
   text-decoration: none;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .loginContainer {
+    padding: var(--spacing-lg);
+    max-width: 22rem;
+  }
+
+  .loginTitle {
+    font-size: var(--font-xl);
+  }
+
+  .loginSubtitle {
+    font-size: var(--font-sm);
+  }
+
+  .loginForm input {
+    font-size: var(--font-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .loginPage {
+    padding-inline: var(--spacing-md);
+  }
+
+  .loginContainer {
+    padding: var(--spacing-md);
+    border-radius: var(--spacing-md);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .loginTitle {
+    font-size: var(--font-base);
+  }
+
+  .loginSubtitle {
+    font-size: var(--font-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .loginForm input {
+    font-size: var(--font-sm);
+    padding: var(--spacing-sm);
+  }
+
+  .loginForm button {
+    font-size: var(--font-sm);
+    padding: var(--spacing-md);
+  }
+
+  .registerText a {
+    font-size: var(--font-xs);
+  }
 }

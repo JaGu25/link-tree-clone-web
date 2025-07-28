@@ -1,10 +1,10 @@
 .card {
   background-color: var(--card-bg);
-  border-radius: 1rem; 
+  border-radius: 1rem;
   padding: 1rem 1.25rem;
   max-width: 17.5rem;
   width: 100%;
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.06); 
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.06);
   border: 1px solid var(--card-border);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -23,7 +23,45 @@
 }
 
 .icon {
-  font-size: var(--font-xl); 
+  font-size: var(--font-xl);
   color: var(--icon-color);
-  margin-bottom: 0.75rem; 
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .card {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: var(--font-base);
+  }
+
+  .description {
+    font-size: var(--font-sm);
+  }
+
+  .icon {
+    font-size: var(--font-2xl);
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    max-width: 100%;
+    padding: 0.875rem;
+  }
+
+  .title {
+    font-size: var(--font-sm);
+  }
+
+  .description {
+    font-size: var(--font-xs);
+  }
+
+  .icon {
+    font-size: var(--font-xl);
+  }
 }
