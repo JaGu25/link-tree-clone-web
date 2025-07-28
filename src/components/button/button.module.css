@@ -1,6 +1,6 @@
 .btn {
   padding: 10px 24px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter';
   font-size: var(--font-base);
   border: none;
   border-radius: 999px;
@@ -11,7 +11,6 @@
   justify-content: center;
 }
 
-/* Estilo general */
 .primary {
   background-color: var(--primary-color);
   color: var(--navbar-bg);
