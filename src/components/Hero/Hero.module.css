@@ -1,7 +1,7 @@
 .hero {
-  padding: 9.375rem 1.25rem;
+  padding: var(--spacing-hero-desktop, 9.375rem) var(--spacing-md);
   text-align: center;
-  color: white;
+  color: #fff;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   overflow-x: hidden;
 }
@@ -9,14 +9,14 @@
 .hero h1 {
   font-size: var(--font-6xl);
   font-weight: 700;
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--spacing-lg);
   line-height: 1.2;
   word-wrap: break-word;
 }
 
 .hero p {
   font-size: var(--font-lg);
-  margin-bottom: 1.875rem;
+  margin-bottom: calc(var(--spacing-lg) * 1.25);
   max-width: 37.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -30,7 +30,7 @@
 }
 
 .actions .link {
-  color: white;
+  color: #fff;
   text-decoration: underline;
   font-weight: 500;
   font-size: var(--font-base);
@@ -38,7 +38,7 @@
 
 @media (max-width: 1023px) and (min-width: 768px) {
   .hero {
-    padding: 7rem 1rem;
+    padding: 7rem var(--spacing-sm);
   }
 
   .hero h1 {
@@ -53,7 +53,7 @@
 
 @media (max-width: 767px) {
   .hero {
-    padding: 5rem 1rem;
+    padding: 5rem var(--spacing-sm);
   }
 
   .hero h1 {
@@ -70,17 +70,18 @@
 
   .actions {
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 var(--spacing-sm);
     flex-direction: column;
     gap: 0.75rem;
   }
 
   .actions .link {
-    font-size: 0.875rem;
+    font-size: var(--font-sm);
   }
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;

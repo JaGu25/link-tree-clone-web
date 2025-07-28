@@ -35,15 +35,15 @@
   }
 
   .title {
-    font-size: 1.15rem;
+    font-size: var(--font-base);
   }
 
   .description {
-    font-size: 0.95rem;
+    font-size: var(--font-sm);
   }
 
   .icon {
-    font-size: 2rem;
+    font-size: var(--font-2xl);
   }
 }
 
@@ -54,14 +54,14 @@
   }
 
   .title {
-    font-size: 1.05rem;
+    font-size: var(--font-sm);
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: var(--font-xs);
   }
 
   .icon {
-    font-size: 1.75rem;
+    font-size: var(--font-xl);
   }
 }

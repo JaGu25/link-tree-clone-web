@@ -1,6 +1,6 @@
 .btn {
   padding: 10px 24px;
-  font-family: 'Inter';
+  font-family: var(--font-main);
   font-size: var(--font-base);
   border: none;
   border-radius: 999px;
@@ -25,13 +25,13 @@
   background-color: var(--navbar-bg);
   color: var(--primary-color);
   border: 3px solid var(--navbar-bg);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .white:hover:not(:disabled) {
-  background-color: #f3f4f6;
+  background-color: var(--background-hover);
   color: var(--primary-color);
-  border-color: #f3f4f6;
+  border-color: var(--background-hover);
   transform: scale(1.03);
 }
 

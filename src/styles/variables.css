@@ -2,15 +2,18 @@
   --primary-color: #4f46e5;
   --primary-color-dark: #4338ca;
   --secondary-color: #9333ea;
-  --text-color: #374151;
-  --text-dark: #222;
-  --text-medium: #555;
-  --background-hover: #eef2ff;
   --navbar-bg: #ffffff;
   --card-bg: #ffffff;
   --card-border: #f0f0f0;
+  --background-gray: #f8f9fb;
+  --background-hover: #eef2ff;
+  --color-muted: #cbd5e1;
+  --text-color: #374151;
+  --text-dark: #222;
+  --text-medium: #555;
   --icon-color: #4c8bf5;
   --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --font-main: 'Inter';
   --font-xs: 0.75rem;
   --font-sm: 0.875rem;
   --font-base: 1rem;
@@ -21,7 +24,10 @@
   --font-4xl: 2.25rem;
   --font-5xl: 3rem;
   --font-6xl: 5rem;
-  --font-h2: 2.5rem; 
-  --font-main: 'Inter';
-  --background-gray: #f8f9fb;
+  --font-h2: 2.5rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --icon-size: 1.4rem;
 }

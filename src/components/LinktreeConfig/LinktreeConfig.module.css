@@ -5,7 +5,7 @@ body {
 }
 
 .wrapper {
-  padding: 2rem;
+  padding: var(--spacing-lg);
   background-color: var(--background-gray);
   min-height: 100vh;
 }
@@ -21,7 +21,7 @@ body {
   font-size: var(--font-xl);
   font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-lg);
   text-align: left;
 }
 
@@ -38,7 +38,7 @@ body {
 .title {
   font-size: var(--font-2xl);
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-lg);
   color: var(--text-color);
   text-align: left;
 }
@@ -53,6 +53,7 @@ body {
   font-weight: 600;
   color: var(--text-medium);
   margin-bottom: 0.2rem;
+  font-size: var(--font-base);
 }
 
 .form input[type="text"],
@@ -84,6 +85,7 @@ body {
   gap: 0.5rem;
   margin-top: 1rem;
   color: var(--text-color);
+  font-size: var(--font-sm);
 }
 
 .publicLink {
@@ -95,6 +97,7 @@ body {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 700;
+  font-size: var(--font-base);
 }
 
 .publicLink a:hover {
@@ -166,6 +169,7 @@ body {
   .checkbox {
     flex-direction: row;
     justify-content: flex-start;
+    font-size: var(--font-sm);
   }
 
   .buttonContainer {
