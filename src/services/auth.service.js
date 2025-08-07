@@ -21,3 +21,20 @@ export const loginService = async (email, password) => {
     refreshToken,
     };
 };
+
+export const registerService = async ({ name, email, password }) => {
+    const response = await fetch(`${API_URL}/auth/register`, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, email, password }),
+    });
+
+    if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || "Error al registrarse");
+    }
+
+    return await response.json();
+};
