@@ -16,7 +16,7 @@ function AppRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/config" element={<LinktreeConfig/>} />
-       <Route path="/public" element={<PublicProfile/>} />
+      <Route path="/public" element={<PublicProfile/>} />
     </Routes>
   );
 }
