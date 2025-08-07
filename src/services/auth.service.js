@@ -14,10 +14,10 @@ export const loginService = async (email, password) => {
     throw new Error(error.message || "Error al iniciar sesión");
     }
 
-    const data = await response.json();
+    const {accessToken,refreshToken } = await response.json();
 
     return {
-    accessToken: data.accessToken,
-    refreshToken: data.refreshToken,
+    accessToken,
+    refreshToken,
     };
 };
