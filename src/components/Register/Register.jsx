@@ -4,6 +4,8 @@ import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import { registerService } from "../../services/auth.service";
 import SweetAlert2 from 'react-sweetalert2';
+import { Link } from "react-router-dom";
+
 
 const Register = () => {
     const navigate = useNavigate();
@@ -87,7 +89,7 @@ const Register = () => {
                     <Button text="Registrarse" type="submit" variant="primary" />
 
                     <p className={styles.registerText}>
-                        ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>
+                        ¿Ya tienes una cuenta?  <Link to="/login">Inicia sesión</Link>
                     </p>
                 </form>
             </div>
