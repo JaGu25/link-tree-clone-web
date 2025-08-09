@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import Button from "../Button/Button";
 import { loginService } from "../../services/auth.service";
-import SweetAlert2 from 'react-sweetalert2';
+import SweetAlert2 from "react-sweetalert2";
+import { AuthContext } from "../../context/AuthContext"; 
 
 const Login = () => {
     const navigate = useNavigate();
+    const { login } = useContext(AuthContext); 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [swalProps, setSwalProps] = useState({});
@@ -16,23 +18,22 @@ const Login = () => {
 
         try {
             const { accessToken, refreshToken } = await loginService(email, password);
-            localStorage.setItem("accessToken", accessToken);
-            localStorage.setItem("refreshToken", refreshToken);
+            login({ accessToken, refreshToken });
 
             setSwalProps({
                 show: true,
-                icon: 'success',
-                title: '¡Login exitoso!',
-                text: 'Bienvenido de nuevo',
+                icon: "success",
+                title: "¡Login exitoso!",
+                text: "Bienvenido de nuevo",
                 timer: 2000,
                 showConfirmButton: false,
             });
         } catch (err) {
             setSwalProps({
                 show: true,
-                icon: 'error',
-                title: 'Error al iniciar sesión',
-                text: err.message || 'Credenciales inválidas',
+                icon: "error",
+                title: "Error al iniciar sesión",
+                text: err.message || "Credenciales inválidas",
             });
         }
     };
@@ -73,7 +74,7 @@ const Login = () => {
             <SweetAlert2
                 {...swalProps}
                 didClose={() => {
-                    if (swalProps.icon === 'success') {
+                    if (swalProps.icon === "success") {
                         navigate("/config");
                     }
                     setSwalProps({});
