@@ -3,10 +3,13 @@ import styles from "./LinktreeConfig.module.css";
 import AdminNavbar from "../AdminNavbar/AdminNavbar";
 import Button from "../../components/Button/Button";
 import { getProfileService, createProfileService } from "../../services/profile.service";
+import { useUser } from "../../context/UserContext";
 
 const API_URL = "http://localhost:3001/api";
 
 const LinktreeConfig = () => {
+  const { loading, setLoading, message, setMessage, getValidToken } = useUser();
+
   const [formData, setFormData] = useState({
     username: "",
     bio: "",
@@ -17,23 +20,6 @@ const LinktreeConfig = () => {
     main_color: "#5f5fff",
     is_public: true,
   });
-
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
-
-  const getValidToken = async () => {
-    const refreshToken = localStorage.getItem("refreshToken");
-    if (!refreshToken) throw new Error("No hay refresh token");
-
-    const res = await fetch(`${API_URL}/auth/refresh-token`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${refreshToken}` },
-    });
-
-    if (!res.ok) throw new Error("No se pudo refrescar el token");
-    const data = await res.json();
-    return data.accessToken;
-  };
 
   useEffect(() => {
     const fetchProfile = async () => {
