@@ -142,15 +142,23 @@ const LinktreeConfig = () => {
             )}
 
             <label>Enlaces populares</label>
-            {formData.links.map((link, i) => (
-              <input
-                key={i}
-                type="url"
-                placeholder={`https://enlace${i + 1}.com`}
-                value={link}
-                onChange={e => handleLinkChange(i, e.target.value)}
-              />
-            ))}
+            {formData.links.map((link, i) => {
+              const placeholders = [
+                "https://instagram.com/usuario",
+                "https://youtube.com/@usuario",
+                "https://tiktok.com/@usuario",
+                "https://linkedin.com/in/usuario",
+              ];
+              return (
+                <input
+                  key={i}
+                  type="url"
+                  placeholder={placeholders[i]}
+                  value={link}
+                  onChange={e => handleLinkChange(i, e.target.value)}
+                />
+              );
+            })}
 
             <label>Agregar otro enlace</label>
             <input

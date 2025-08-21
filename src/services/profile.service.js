@@ -25,3 +25,14 @@ export const createProfileService = async (formData, token) => {
 
   return res.json();
 };
+
+export const getPublicProfileService = async (userId) => {
+  try {
+    const res = await fetch(`${API_URL}/linktree/public?user_id=${userId}`);
+    if (!res.ok) throw new Error("Error al obtener perfil público");
+    return await res.json();
+  } catch (error) {
+    console.error("getPublicProfileService:", error);
+    throw error;
+  }
+};

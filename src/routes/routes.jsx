@@ -15,14 +15,20 @@ function AppRoutes() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/landingpage" element={<LandingPage />} />
       <Route path="/home" element={<Home />} />
+
       <Route element={<PublicRoute />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
+
       <Route element={<PrivateRoute />}>
         <Route path="/config" element={<LinktreeConfig />} />
       </Route>
-      <Route path="/public" element={<PublicProfile />} />
+
+      <Route path="/public/:userId" element={<PublicProfile />} />
+
+
+
     </Routes>
   );
 }
