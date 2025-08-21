@@ -1,56 +1,91 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../ProfilePreview/ProfilePreview.module.css";
-import { FcBusinessContact, FcBriefcase, FcStart, FcWorkflow } from "react-icons/fc";
+import {
+  FcBusinessContact,
+  FcBriefcase,
+  FcStart,
+  FcWorkflow,
+} from "react-icons/fc";
 import { FaRegCopyright } from "react-icons/fa6";
-import avatar from "../../assets/me.jpeg";
+import { useParams } from "react-router-dom";
+import { getPublicProfileService } from "../../services/profile.service";
 
 const PublicProfile = () => {
+  const { userId } = useParams();
+  const [profileData, setProfileData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const data = await getPublicProfileService(userId);
+        setProfileData(data);
+      } catch (error) {
+        console.error("Error cargando perfil público:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    if (userId) fetchProfile();
+  }, [userId]);
+
+  if (loading) return <p>Cargando...</p>;
+  if (!profileData) return <p>Perfil no encontrado</p>;
+
+  const { profile, links } = profileData;
+
+  const orderedTitles = [
+    "Instagram",
+    "YouTube",
+    "TikTok",
+    "LinkedIn",
+    "Mi Web",
+  ];
+  const icons = [
+    FcWorkflow,
+    FcBusinessContact,
+    FcStart,
+    FcBriefcase,
+    FcWorkflow,
+  ];
+
   return (
-   <section className={styles.publicWrapper}>
+    <section className={styles.publicWrapper}>
       <div className={styles.preview}>
-        <img className={styles.avatar} src={avatar} alt="Avatar" />
-        <h2 className={styles.name}>Matías Albites</h2>
-        <p className={styles.bio}>
-          Desarrollador Frontend | Apasionado por la tecnología.
-        </p>
+        <img
+          className={styles.avatar}
+          src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${
+            profile.avatar_url
+          }`}
+          alt="Avatar"
+        />
+        <h2 className={styles.name}>{profile.name || "Usuario"}</h2>
 
+        <p className={styles.bio}>{profile.bio}</p>
         <div className={styles.links}>
-          <a
-            href="https://github.com"
-            className={styles.link}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FcWorkflow className={styles.icon} />
-            GitHub
-          </a>
-          <a
-            href="https://linkedin.com"
-            className={styles.link}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FcBusinessContact className={styles.icon} />
-            LinkedIn
-          </a>
-          <a
-            href="https://youtube.com"
-            className={styles.link}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FcStart className={styles.icon} />
-            YouTube
-          </a>
-          <a href="https://mail.google.com/mail/u/0/#inbox" className={styles.link}>
-            <FcBriefcase className={styles.icon} />
-            Contacto
-          </a>
-        </div>
+          {orderedTitles.map((title, index) => {
+            const Icon = icons[index % icons.length];
+            const link = links[index];
 
+            return (
+              link && (
+                <a
+                  key={index}
+                  href={link.url}
+                  className={styles.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Icon className={styles.icon} />
+                  {title}
+                </a>
+              )
+            );
+          })}
+        </div>
         <div className={styles.footer}>
           <FaRegCopyright size={14} className={styles.footerIcon} />
-          <span>2025 Matias.front</span>
+          <span>{new Date().getFullYear()} Matias.front</span>
         </div>
       </div>
     </section>
