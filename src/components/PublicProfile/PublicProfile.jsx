@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../ProfilePreview/ProfilePreview.module.css";
-import {
-  FcBusinessContact,
-  FcBriefcase,
-  FcStart,
-  FcWorkflow,
+import { FcBusinessContact, FcBriefcase, FcStart, FcWorkflow,
 } from "react-icons/fc";
 import { FaRegCopyright } from "react-icons/fa6";
 import { useParams } from "react-router-dom";

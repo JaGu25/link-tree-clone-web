@@ -116,7 +116,7 @@ const LinktreeConfig = () => {
 
   return (
     <>
-      <AdminNavbar />
+      <AdminNavbar/>
       <div className={styles.wrapper}>
         <div className={styles.titleContainer}>
           <h2 className={styles.pageTitle}>Configura tu Linktree</h2>
@@ -139,7 +139,7 @@ const LinktreeConfig = () => {
               onChange={e => handleChange("bio", e.target.value)}
             />
 
-            <label>Avatar (subir imagen)</label>
+            <label>Avatar (Subir Imagen)</label>
             <input type="file" accept="image/*" onChange={handleAvatarUpload} />
             {formData.avatarPreview && (
               <img
@@ -183,7 +183,6 @@ const LinktreeConfig = () => {
               onChange={e => handleChange("main_color", e.target.value)}
             />
 
-            {/* 🔹 Paleta generada desde context */}
             {palette.length > 0 && (
               <div className={styles.palettePreview}>
                 {palette.map((c, i) => (
