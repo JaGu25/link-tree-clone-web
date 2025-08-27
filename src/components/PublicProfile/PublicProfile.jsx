@@ -9,17 +9,23 @@ import {
 import { FaRegCopyright } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
 import { getPublicProfileService } from "../../services/profile.service";
+import { useColor } from "../../context/ColorContext";
 
 const PublicProfile = () => {
   const { userId } = useParams();
   const [profileData, setProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const { gradient, setMainColor } = useColor();
+
   useEffect(() => {
     const fetchProfile = async () => {
       try {
         const data = await getPublicProfileService(userId);
         setProfileData(data);
+        if (data?.profile?.main_color) {
+          setMainColor(data.profile.main_color);
+        }
       } catch (error) {
         console.error("Error cargando perfil público:", error);
       } finally {
@@ -27,7 +33,7 @@ const PublicProfile = () => {
       }
     };
     if (userId) fetchProfile();
-  }, [userId]);
+  }, [userId, setMainColor]);
 
   if (loading) return <p>Cargando...</p>;
   if (!profileData) return <p>Perfil no encontrado</p>;
@@ -50,7 +56,10 @@ const PublicProfile = () => {
   ];
 
   return (
-    <section className={styles.publicWrapper}>
+    <section
+      className={styles.publicWrapper}
+      style={{ background: gradient }}
+    >
       <div className={styles.preview}>
         <img
           className={styles.avatar}
