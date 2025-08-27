@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "../ProfilePreview/ProfilePreview.module.css";
-import { FcBusinessContact, FcBriefcase, FcStart, FcWorkflow,
+import {
+  FcBusinessContact,
+  FcBriefcase,
+  FcStart,
+  FcWorkflow,
 } from "react-icons/fc";
 import { FaRegCopyright } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
@@ -11,8 +15,21 @@ const PublicProfile = () => {
   const { userId } = useParams();
   const [profileData, setProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
-
   const { gradient, setMainColor } = useColor();
+
+  const handleClick = async (link_id, url) => {
+    try {
+      await fetch(`${import.meta.env.VITE_API_URL}/linktree/click`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ link_id }),
+      });
+      window.open(url, "_blank");
+    } catch (error) {
+      console.error("Error registrando click:", error);
+      window.open(url, "_blank");
+    }
+  };
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -35,7 +52,6 @@ const PublicProfile = () => {
   if (!profileData) return <p>Perfil no encontrado</p>;
 
   const { profile, links } = profileData;
-
   const orderedTitles = [
     "Instagram",
     "YouTube",
@@ -52,10 +68,7 @@ const PublicProfile = () => {
   ];
 
   return (
-    <section
-      className={styles.publicWrapper}
-      style={{ background: gradient }}
-    >
+    <section className={styles.publicWrapper} style={{ background: gradient }}>
       <div className={styles.preview}>
         <img
           className={styles.avatar}
@@ -65,8 +78,8 @@ const PublicProfile = () => {
           alt="Avatar"
         />
         <h2 className={styles.name}>{profile.name || "Usuario"}</h2>
-
         <p className={styles.bio}>{profile.bio}</p>
+
         <div className={styles.links}>
           {orderedTitles.map((title, index) => {
             const Icon = icons[index % icons.length];
@@ -76,10 +89,12 @@ const PublicProfile = () => {
               link && (
                 <a
                   key={index}
-                  href={link.url}
+                  href="#"
                   className={styles.link}
-                  target="_blank"
-                  rel="noreferrer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleClick(link.id, link.url);
+                  }}
                 >
                   <Icon className={styles.icon} />
                   {title}
@@ -88,6 +103,7 @@ const PublicProfile = () => {
             );
           })}
         </div>
+
         <div className={styles.footer}>
           <FaRegCopyright size={14} className={styles.footerIcon} />
           <span>{new Date().getFullYear()} Matias.front</span>
