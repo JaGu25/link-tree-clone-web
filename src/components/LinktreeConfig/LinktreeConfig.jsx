@@ -4,11 +4,11 @@ import AdminNavbar from "../AdminNavbar/AdminNavbar";
 import Button from "../../components/Button/Button";
 import { getProfileService, createProfileService } from "../../services/profile.service";
 import { useUser } from "../../context/UserContext";
-
-const API_URL = "http://localhost:3001/api";
+import { useColor } from "../../context/ColorContext";
 
 const LinktreeConfig = () => {
   const { loading, setLoading, message, setMessage, getValidToken } = useUser();
+  const { setMainColor, palette, mainColor } = useColor();
 
   const [formData, setFormData] = useState({
     username: "",
@@ -37,6 +37,10 @@ const LinktreeConfig = () => {
           main_color: data.profile.main_color || "#5f5fff",
           is_public: data.profile.is_public ?? true,
         }));
+
+        if (data.profile.main_color) {
+          setMainColor(data.profile.main_color);
+        }
       } catch (error) {
         console.log("No hay perfil aún", error);
       }
@@ -46,6 +50,10 @@ const LinktreeConfig = () => {
 
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+
+    if (field === "main_color") {
+      setMainColor(value);
+    }
   };
 
   const handleLinkChange = (index, value) => {
@@ -108,7 +116,7 @@ const LinktreeConfig = () => {
 
   return (
     <>
-      <AdminNavbar />
+      <AdminNavbar/>
       <div className={styles.wrapper}>
         <div className={styles.titleContainer}>
           <h2 className={styles.pageTitle}>Configura tu Linktree</h2>
@@ -131,7 +139,7 @@ const LinktreeConfig = () => {
               onChange={e => handleChange("bio", e.target.value)}
             />
 
-            <label>Avatar (subir imagen)</label>
+            <label>Avatar (Subir Imagen)</label>
             <input type="file" accept="image/*" onChange={handleAvatarUpload} />
             {formData.avatarPreview && (
               <img
@@ -174,6 +182,20 @@ const LinktreeConfig = () => {
               value={formData.main_color}
               onChange={e => handleChange("main_color", e.target.value)}
             />
+
+            {palette.length > 0 && (
+              <div className={styles.palettePreview}>
+                {palette.map((c, i) => (
+                  <div
+                    key={i}
+                    className={styles.colorBox}
+                    style={{ backgroundColor: c }}
+                    onClick={() => handleChange("main_color", c)}
+                    title={c}
+                  />
+                ))}
+              </div>
+            )}
 
             <div className={styles.actionsRow}>
               <div className={styles.checkbox}>
