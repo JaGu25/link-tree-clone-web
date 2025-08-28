@@ -36,3 +36,18 @@ export const getPublicProfileService = async (userId) => {
     throw error;
   }
 };
+
+export const registerVisitService = async (user_id) => {
+  try {
+    const response = await fetch(`${API_URL}/linktree/visit`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user_id }),
+    });
+    if (!response.ok) throw new Error("Error al registrar visita");
+    return await response.json();
+  } catch (error) {
+    console.error("registerVisitService:", error);
+    throw error;
+  }
+};

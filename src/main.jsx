@@ -15,9 +15,9 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <AuthProvider>
         <UserProvider>
-          <ColorProvider>
+            <ColorProvider>
             <App />
-          </ColorProvider>
+            </ColorProvider>
         </UserProvider>
       </AuthProvider>
     </BrowserRouter>
