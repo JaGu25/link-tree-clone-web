@@ -8,7 +8,10 @@ import {
 } from "react-icons/fc";
 import { FaRegCopyright } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
-import { getPublicProfileService } from "../../services/profile.service";
+import {
+  getPublicProfileService,
+  registerVisitService,
+} from "../../services/profile.service";
 import { useColor } from "../../context/ColorContext";
 
 const PublicProfile = () => {
@@ -32,20 +35,36 @@ const PublicProfile = () => {
   };
 
   useEffect(() => {
+    let isMounted = true;
+
     const fetchProfile = async () => {
       try {
         const data = await getPublicProfileService(userId);
+        if (!isMounted) return;
+
         setProfileData(data);
+
         if (data?.profile?.main_color) {
           setMainColor(data.profile.main_color);
         }
+
+        const visitedKey = `visited-${userId}`;
+        if (!sessionStorage.getItem(visitedKey)) {
+          await registerVisitService(userId);
+          sessionStorage.setItem(visitedKey, "true");
+        }
       } catch (error) {
-        console.error("Error cargando perfil público:", error);
+        console.error("Error cargando perfil:", error);
       } finally {
-        setLoading(false);
+        if (isMounted) setLoading(false);
       }
     };
+
     if (userId) fetchProfile();
+
+    return () => {
+      isMounted = false;
+    };
   }, [userId, setMainColor]);
 
   if (loading) return <p>Cargando...</p>;
