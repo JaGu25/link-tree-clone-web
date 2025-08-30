@@ -1,0 +1,156 @@
+.dashboard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 500px; 
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #e5e7eb;
+  width: 100%;
+}
+
+.cardTitle {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.cardSubtitle {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filterBtn {
+  padding: 0.3rem 0.8rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: #f3f4f6;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.filterBtn:hover {
+  background: #e5e7eb;
+}
+
+.active {
+  background: #ede9fe;
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.statBox {
+  flex: 1;
+  background: #f9fafb;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.statValue {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+
+.chartWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.chartWrapper canvas {
+  width: 100% !important;
+  height: 250px !important;
+  max-height: 250px;
+}
+
+
+.legend {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.legendItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.dot1 { background: #7c3aed; }
+.dot2 { background: #a78bfa; }
+.dot3 { background: #c4b5fd; }
+.dot4 { background: #ede9fe; }
+
+.legendValue {
+  font-weight: 600;
+}

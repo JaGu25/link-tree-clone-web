@@ -8,6 +8,7 @@ import LinktreeConfig from "../components/LinktreeConfig/LinktreeConfig";
 import PublicProfile from "../components/PublicProfile/PublicProfile";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
+import Dashboard from "../components/Dashboard/dashboard";
 
 function AppRoutes() {
   return (
@@ -27,8 +28,7 @@ function AppRoutes() {
 
       <Route path="/public/:userId" element={<PublicProfile />} />
 
-
-
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   );
 }
