@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import styles from "./LinktreeConfig.module.css";
 import AdminNavbar from "../AdminNavbar/AdminNavbar";
 import Button from "../../components/Button/Button";
-import { getProfileService, createProfileService } from "../../services/profile.service";
+import {
+  getProfileService,
+  createProfileService,
+} from "../../services/profile.service";
 import { useUser } from "../../context/UserContext";
 import { useColor } from "../../context/ColorContext";
 
@@ -27,12 +30,12 @@ const LinktreeConfig = () => {
         const token = await getValidToken();
         const data = await getProfileService(token);
 
-        setFormData(prev => ({
+        setFormData((prev) => ({
           ...prev,
           username: data.profile.username || "",
           bio: data.profile.bio || "",
           avatarPreview: data.profile.avatar_url || "",
-          links: data.links?.slice(0, 4).map(l => l.url) || ["", "", "", ""],
+          links: data.links?.slice(0, 4).map((l) => l.url) || ["", "", "", ""],
           extraLink: data.links?.[4]?.url || "",
           main_color: data.profile.main_color || "#5f5fff",
           is_public: data.profile.is_public ?? true,
@@ -49,7 +52,7 @@ const LinktreeConfig = () => {
   }, []);
 
   const handleChange = (field, value) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
 
     if (field === "main_color") {
       setMainColor(value);
@@ -59,7 +62,7 @@ const LinktreeConfig = () => {
   const handleLinkChange = (index, value) => {
     const newLinks = [...formData.links];
     newLinks[index] = value;
-    setFormData(prev => ({ ...prev, links: newLinks }));
+    setFormData((prev) => ({ ...prev, links: newLinks }));
   };
 
   const handleAvatarUpload = (e) => {
@@ -70,7 +73,7 @@ const LinktreeConfig = () => {
       return;
     }
 
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       avatarFile: file,
       avatarPreview: URL.createObjectURL(file),
@@ -99,8 +102,8 @@ const LinktreeConfig = () => {
       if (formData.avatarFile) payload.append("avatar", formData.avatarFile);
 
       const links = [...formData.links, formData.extraLink]
-        .filter(l => l)
-        .map(url => ({ title: url, url }));
+        .filter((l) => l)
+        .map((url) => ({ title: url, url }));
       payload.append("links", JSON.stringify(links));
 
       await createProfileService(payload, token);
@@ -116,7 +119,6 @@ const LinktreeConfig = () => {
 
   return (
     <>
-      <AdminNavbar/>
       <div className={styles.wrapper}>
         <div className={styles.titleContainer}>
           <h2 className={styles.pageTitle}>Configura tu Linktree</h2>
@@ -129,14 +131,14 @@ const LinktreeConfig = () => {
               type="text"
               placeholder="@tuusuario"
               value={formData.username}
-              onChange={e => handleChange("username", e.target.value)}
+              onChange={(e) => handleChange("username", e.target.value)}
             />
 
             <label>Biografía</label>
             <textarea
               placeholder="Cuéntanos algo sobre ti"
               value={formData.bio}
-              onChange={e => handleChange("bio", e.target.value)}
+              onChange={(e) => handleChange("bio", e.target.value)}
             />
 
             <label>Avatar (Subir Imagen)</label>
@@ -163,7 +165,7 @@ const LinktreeConfig = () => {
                   type="url"
                   placeholder={placeholders[i]}
                   value={link}
-                  onChange={e => handleLinkChange(i, e.target.value)}
+                  onChange={(e) => handleLinkChange(i, e.target.value)}
                 />
               );
             })}
@@ -173,14 +175,14 @@ const LinktreeConfig = () => {
               type="url"
               placeholder="https://miweb.com"
               value={formData.extraLink}
-              onChange={e => handleChange("extraLink", e.target.value)}
+              onChange={(e) => handleChange("extraLink", e.target.value)}
             />
 
             <label>Color principal</label>
             <input
               type="color"
               value={formData.main_color}
-              onChange={e => handleChange("main_color", e.target.value)}
+              onChange={(e) => handleChange("main_color", e.target.value)}
             />
 
             {palette.length > 0 && (
@@ -203,13 +205,16 @@ const LinktreeConfig = () => {
                   type="checkbox"
                   id="public"
                   checked={formData.is_public}
-                  onChange={e => handleChange("is_public", e.target.checked)}
+                  onChange={(e) => handleChange("is_public", e.target.checked)}
                 />
                 <label htmlFor="public">Hacer mi perfil público</label>
               </div>
 
               <div className={styles.buttonContainer}>
-                <Button text={loading ? "Guardando..." : "Guardar cambios"} type="submit" />
+                <Button
+                  text={loading ? "Guardando..." : "Guardar cambios"}
+                  type="submit"
+                />
               </div>
             </div>
             {message && <p style={{ marginTop: "10px" }}>{message}</p>}
