@@ -84,3 +84,21 @@
     font-size: 0.85rem;
   }
 }
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logoLink {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.logoLink:hover {
+  color: var(--text-color);
+}

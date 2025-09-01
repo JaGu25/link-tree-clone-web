@@ -8,6 +8,8 @@ import LinktreeConfig from "../components/LinktreeConfig/LinktreeConfig";
 import PublicProfile from "../components/PublicProfile/PublicProfile";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
+import Dashboard from "../components/Dashboard/dashboard";
+import Template from "../components/Template/template";
 
 function AppRoutes() {
   return (
@@ -20,15 +22,15 @@ function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
-
+      
       <Route element={<PrivateRoute />}>
-        <Route path="/config" element={<LinktreeConfig />} />
+        <Route element={<Template />}>
+          <Route path="/config" element={<LinktreeConfig />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
       </Route>
 
       <Route path="/public/:userId" element={<PublicProfile />} />
-
-
-
     </Routes>
   );
 }
