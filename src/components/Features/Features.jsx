@@ -31,7 +31,7 @@ const Features = () => {
                 </div>
             </section>
 
-            <section className={styles.featuresAlt}>
+            <section className={styles.featuresAlt} id="comunidad">
                 <h2>Usadas por creadores y marcas líderes</h2>
                 <div className={styles.grid}>
                     <FeatureCard

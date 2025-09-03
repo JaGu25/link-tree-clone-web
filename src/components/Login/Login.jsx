@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 import { loginService } from "../../services/auth.service";
 import SweetAlert2 from "react-sweetalert2";
 import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -68,7 +69,7 @@ const Login = () => {
 
             <Button text="Iniciar sesión" type="submit" variant="primary" />
             <p className={styles.registerText}>
-            ¿No tienes una cuenta? <a href="#">Regístrate aquí</a>
+            ¿No tienes una cuenta? <Link to="/register">Regístrate aquí</Link>
             </p>
         </form>
         </div>
