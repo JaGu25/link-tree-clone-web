@@ -11,9 +11,10 @@ import { useColor } from "../../context/ColorContext";
 
 const LinktreeConfig = () => {
   const { loading, setLoading, message, setMessage, getValidToken } = useUser();
-  const { setMainColor, palette, mainColor } = useColor();
+  const { setMainColor, palette } = useColor();
 
   const [formData, setFormData] = useState({
+    user_id: null,     
     username: "",
     bio: "",
     avatarFile: null,
@@ -32,6 +33,7 @@ const LinktreeConfig = () => {
 
         setFormData((prev) => ({
           ...prev,
+          user_id: data.profile.user_id,
           username: data.profile.username || "",
           bio: data.profile.bio || "",
           avatarPreview: data.profile.avatar_url || "",
@@ -53,10 +55,7 @@ const LinktreeConfig = () => {
 
   const handleChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-
-    if (field === "main_color") {
-      setMainColor(value);
-    }
+    if (field === "main_color") setMainColor(value);
   };
 
   const handleLinkChange = (index, value) => {
@@ -222,9 +221,17 @@ const LinktreeConfig = () => {
         </div>
 
         <div className={styles.publicLink}>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            Ver mi Linktree público
-          </a>
+          {formData.user_id ? (
+            <a
+              href={`/public/${formData.user_id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver mi Linktree público
+            </a>
+          ) : (
+            <span>No hay perfil público aún</span>
+          )}
         </div>
       </div>
     </>
