@@ -14,7 +14,7 @@ const LinktreeConfig = () => {
   const { setMainColor, palette } = useColor();
 
   const [formData, setFormData] = useState({
-    user_id: null,     
+    user_id: null,
     username: "",
     bio: "",
     avatarFile: null,
@@ -105,7 +105,12 @@ const LinktreeConfig = () => {
         .map((url) => ({ title: url, url }));
       payload.append("links", JSON.stringify(links));
 
-      await createProfileService(payload, token);
+      const response = await createProfileService(payload, token);
+
+      setFormData((prev) => ({
+        ...prev,
+        user_id: response.profileId,
+      }));
 
       setMessage("Perfil guardado con éxito!");
     } catch (error) {
