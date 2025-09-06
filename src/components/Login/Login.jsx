@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
-import Button from "../Button/Button";
+import Button from "../button/button.jsx";
 import { loginService } from "../../services/auth.service";
 import SweetAlert2 from "react-sweetalert2";
 import { AuthContext } from "../../context/AuthContext";

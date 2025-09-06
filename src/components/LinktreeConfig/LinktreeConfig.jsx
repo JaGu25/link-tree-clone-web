@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./LinktreeConfig.module.css";
 import AdminNavbar from "../AdminNavbar/AdminNavbar";
-import Button from "../../components/Button/Button";
+import Button from "../../components/button/button.jsx";
 import {
   getProfileService,
   createProfileService,

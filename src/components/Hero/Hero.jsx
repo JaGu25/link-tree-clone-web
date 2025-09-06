@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import Button from "../Button/Button";
+import Button from "../button/button.jsx";
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {

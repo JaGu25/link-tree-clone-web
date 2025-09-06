@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../Login/Login.module.css";
-import Button from "../Button/Button";
+import Button from "../button/button.jsx";
 import { useNavigate } from "react-router-dom";
 import { registerService } from "../../services/auth.service";
 import SweetAlert2 from 'react-sweetalert2';
