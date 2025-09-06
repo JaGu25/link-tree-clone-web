@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3001/api";
+import { API_URL } from "../api/config.js";
 
 export const getDashboardData = async (token) => {
   const res = await fetch(`${API_URL}/dashboard`, {
