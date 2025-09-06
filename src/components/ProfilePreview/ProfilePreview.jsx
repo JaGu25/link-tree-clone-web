@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ProfilePreview.module.css";
 import { FcBusinessContact, FcBriefcase, FcStart, FcWorkflow } from "react-icons/fc";
 import { FaRegCopyright } from "react-icons/fa6";
-import avatar from "../../assets/me.jpeg";
+import avatar from "../../assets/Me.jpeg";
 
 const ProfilePreview = () => {
   return (
