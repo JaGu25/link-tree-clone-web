@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
-
+import { API_URL } from "../api/config.js";
 const UserContext = createContext();
-const API_URL = "http://localhost:3001/api";
+
 
 export const UserProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);

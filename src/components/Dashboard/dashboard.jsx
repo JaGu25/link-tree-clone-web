@@ -13,6 +13,7 @@ import {
 } from "chart.js";
 import { AuthContext } from "../../context/AuthContext";
 import styles from "./dashboard.module.css";
+import { API_URL } from "../../api/config.js";
 
 ChartJS.register(
   Title,
@@ -33,7 +34,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const res = await fetchWithAuth("http://localhost:3001/api/dashboard");
+        const res = await fetchWithAuth(`${API_URL}/dashboard`);
         if (!res.ok) throw new Error("Error al obtener dashboard");
         const data = await res.json();
         setDashboardData(data);
